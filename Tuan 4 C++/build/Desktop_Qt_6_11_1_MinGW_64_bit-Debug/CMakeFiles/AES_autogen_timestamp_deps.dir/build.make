@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\c++\qt\Tools\CMake_64\bin\cmake.exe
+CMAKE_COMMAND = C:\Qt\Tools\CMake_64\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\c++\qt\Tools\CMake_64\bin\cmake.exe -E rm -f
+RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\c++\GD\AES
+CMAKE_SOURCE_DIR = "C:\c++\GD\Tuan 4 C++"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug
+CMAKE_BINARY_DIR = "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 # Utility rule file for AES_autogen_timestamp_deps.
 
@@ -77,6 +77,6 @@ CMakeFiles/AES_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/AES_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/AES_autogen_timestamp_deps.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\c++\GD\AES C:\c++\GD\AES C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\AES_autogen_timestamp_deps.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\c++\GD\Tuan 4 C++" "C:\c++\GD\Tuan 4 C++" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\AES_autogen_timestamp_deps.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/AES_autogen_timestamp_deps.dir/depend
 

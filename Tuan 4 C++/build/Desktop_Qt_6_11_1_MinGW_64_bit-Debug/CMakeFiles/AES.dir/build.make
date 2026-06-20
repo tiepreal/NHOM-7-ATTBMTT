@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\c++\qt\Tools\CMake_64\bin\cmake.exe
+CMAKE_COMMAND = C:\Qt\Tools\CMake_64\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\c++\qt\Tools\CMake_64\bin\cmake.exe -E rm -f
+RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\c++\GD\AES
+CMAKE_SOURCE_DIR = "C:\c++\GD\Tuan 4 C++"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug
+CMAKE_BINARY_DIR = "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/AES.dir/depend.make
@@ -68,63 +68,79 @@ include CMakeFiles/AES.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AES.dir/flags.make
 
-AES_autogen/timestamp: C:/c++/qt/6.11.1/mingw_64/bin/moc.exe
-AES_autogen/timestamp: C:/c++/qt/6.11.1/mingw_64/bin/uic.exe
+AES_autogen/timestamp: C:/Qt/6.11.1/mingw_64/bin/moc.exe
+AES_autogen/timestamp: C:/Qt/6.11.1/mingw_64/bin/uic.exe
 AES_autogen/timestamp: CMakeFiles/AES.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target AES"
-	C:\c++\qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/c++/GD/AES/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/AES_autogen.dir/AutogenInfo.json Debug
-	C:\c++\qt\Tools\CMake_64\bin\cmake.exe -E touch C:/c++/GD/AES/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/AES_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target AES"
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen "C:/c++/GD/Tuan 4 C++/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/AES_autogen.dir/AutogenInfo.json" Debug
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch "C:/c++/GD/Tuan 4 C++/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/AES_autogen/timestamp"
 
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj: CMakeFiles/AES.dir/flags.make
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj: CMakeFiles/AES.dir/includes_CXX.rsp
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj: AES_autogen/mocs_compilation.cpp
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj: CMakeFiles/AES.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.obj -c C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.obj -c "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp"
 
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.i"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp > CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp" > CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.i
 
 CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.s"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp -o CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\AES_autogen\mocs_compilation.cpp" -o CMakeFiles\AES.dir\AES_autogen\mocs_compilation.cpp.s
 
 CMakeFiles/AES.dir/main.cpp.obj: CMakeFiles/AES.dir/flags.make
 CMakeFiles/AES.dir/main.cpp.obj: CMakeFiles/AES.dir/includes_CXX.rsp
-CMakeFiles/AES.dir/main.cpp.obj: C:/c++/GD/AES/main.cpp
+CMakeFiles/AES.dir/main.cpp.obj: C:/c++/GD/Tuan\ 4\ C++/main.cpp
 CMakeFiles/AES.dir/main.cpp.obj: CMakeFiles/AES.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AES.dir/main.cpp.obj"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/main.cpp.obj -MF CMakeFiles\AES.dir\main.cpp.obj.d -o CMakeFiles\AES.dir\main.cpp.obj -c C:\c++\GD\AES\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AES.dir/main.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/main.cpp.obj -MF CMakeFiles\AES.dir\main.cpp.obj.d -o CMakeFiles\AES.dir\main.cpp.obj -c "C:\c++\GD\Tuan 4 C++\main.cpp"
 
 CMakeFiles/AES.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AES.dir/main.cpp.i"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\c++\GD\AES\main.cpp > CMakeFiles\AES.dir\main.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\c++\GD\Tuan 4 C++\main.cpp" > CMakeFiles\AES.dir\main.cpp.i
 
 CMakeFiles/AES.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AES.dir/main.cpp.s"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\c++\GD\AES\main.cpp -o CMakeFiles\AES.dir\main.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\c++\GD\Tuan 4 C++\main.cpp" -o CMakeFiles\AES.dir\main.cpp.s
 
 CMakeFiles/AES.dir/mainwindow.cpp.obj: CMakeFiles/AES.dir/flags.make
 CMakeFiles/AES.dir/mainwindow.cpp.obj: CMakeFiles/AES.dir/includes_CXX.rsp
-CMakeFiles/AES.dir/mainwindow.cpp.obj: C:/c++/GD/AES/mainwindow.cpp
+CMakeFiles/AES.dir/mainwindow.cpp.obj: C:/c++/GD/Tuan\ 4\ C++/mainwindow.cpp
 CMakeFiles/AES.dir/mainwindow.cpp.obj: CMakeFiles/AES.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AES.dir/mainwindow.cpp.obj"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/mainwindow.cpp.obj -MF CMakeFiles\AES.dir\mainwindow.cpp.obj.d -o CMakeFiles\AES.dir\mainwindow.cpp.obj -c C:\c++\GD\AES\mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AES.dir/mainwindow.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/mainwindow.cpp.obj -MF CMakeFiles\AES.dir\mainwindow.cpp.obj.d -o CMakeFiles\AES.dir\mainwindow.cpp.obj -c "C:\c++\GD\Tuan 4 C++\mainwindow.cpp"
 
 CMakeFiles/AES.dir/mainwindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AES.dir/mainwindow.cpp.i"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\c++\GD\AES\mainwindow.cpp > CMakeFiles\AES.dir\mainwindow.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\c++\GD\Tuan 4 C++\mainwindow.cpp" > CMakeFiles\AES.dir\mainwindow.cpp.i
 
 CMakeFiles/AES.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AES.dir/mainwindow.cpp.s"
-	C:\c++\qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\c++\GD\AES\mainwindow.cpp -o CMakeFiles\AES.dir\mainwindow.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\c++\GD\Tuan 4 C++\mainwindow.cpp" -o CMakeFiles\AES.dir\mainwindow.cpp.s
+
+CMakeFiles/AES.dir/qaesencryption.cpp.obj: CMakeFiles/AES.dir/flags.make
+CMakeFiles/AES.dir/qaesencryption.cpp.obj: CMakeFiles/AES.dir/includes_CXX.rsp
+CMakeFiles/AES.dir/qaesencryption.cpp.obj: C:/c++/GD/Tuan\ 4\ C++/qaesencryption.cpp
+CMakeFiles/AES.dir/qaesencryption.cpp.obj: CMakeFiles/AES.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AES.dir/qaesencryption.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AES.dir/qaesencryption.cpp.obj -MF CMakeFiles\AES.dir\qaesencryption.cpp.obj.d -o CMakeFiles\AES.dir\qaesencryption.cpp.obj -c "C:\c++\GD\Tuan 4 C++\qaesencryption.cpp"
+
+CMakeFiles/AES.dir/qaesencryption.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AES.dir/qaesencryption.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\c++\GD\Tuan 4 C++\qaesencryption.cpp" > CMakeFiles\AES.dir\qaesencryption.cpp.i
+
+CMakeFiles/AES.dir/qaesencryption.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AES.dir/qaesencryption.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\c++\GD\Tuan 4 C++\qaesencryption.cpp" -o CMakeFiles\AES.dir\qaesencryption.cpp.s
 
 # Object files for target AES
 AES_OBJECTS = \
 "CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/AES.dir/main.cpp.obj" \
-"CMakeFiles/AES.dir/mainwindow.cpp.obj"
+"CMakeFiles/AES.dir/mainwindow.cpp.obj" \
+"CMakeFiles/AES.dir/qaesencryption.cpp.obj"
 
 # External object files for target AES
 AES_EXTERNAL_OBJECTS =
@@ -132,16 +148,17 @@ AES_EXTERNAL_OBJECTS =
 AES.exe: CMakeFiles/AES.dir/AES_autogen/mocs_compilation.cpp.obj
 AES.exe: CMakeFiles/AES.dir/main.cpp.obj
 AES.exe: CMakeFiles/AES.dir/mainwindow.cpp.obj
+AES.exe: CMakeFiles/AES.dir/qaesencryption.cpp.obj
 AES.exe: CMakeFiles/AES.dir/build.make
-AES.exe: C:/c++/qt/6.11.1/mingw_64/lib/libQt6Widgets.a
-AES.exe: C:/c++/qt/6.11.1/mingw_64/lib/libQt6Gui.a
-AES.exe: C:/c++/qt/6.11.1/mingw_64/lib/libQt6Core.a
-AES.exe: C:/c++/qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a
+AES.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a
+AES.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Gui.a
+AES.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Core.a
+AES.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a
 AES.exe: AES.exe.manifest
 AES.exe: CMakeFiles/AES.dir/linkLibs.rsp
 AES.exe: CMakeFiles/AES.dir/objects1.rsp
 AES.exe: CMakeFiles/AES.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable AES.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable AES.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AES.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +170,6 @@ CMakeFiles/AES.dir/clean:
 .PHONY : CMakeFiles/AES.dir/clean
 
 CMakeFiles/AES.dir/depend: AES_autogen/timestamp
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\c++\GD\AES C:\c++\GD\AES C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug C:\c++\GD\AES\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\AES.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\c++\GD\Tuan 4 C++" "C:\c++\GD\Tuan 4 C++" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\c++\GD\Tuan 4 C++\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\AES.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/AES.dir/depend
 

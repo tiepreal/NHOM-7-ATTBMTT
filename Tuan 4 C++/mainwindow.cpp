@@ -10,6 +10,7 @@
 #include <QRandomGenerator>
 #include <QFile>
 #include <QTextStream>
+#include "qaesencryption.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -42,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
     plainText = new QTextEdit;
     cipherText = new QTextEdit;
 
+    base64Text = new QTextEdit;
+    base64Text->setReadOnly(true);
+
     QGroupBox *leftBox =
         new QGroupBox("Bản rõ");
 
@@ -54,6 +58,15 @@ MainWindow::MainWindow(QWidget *parent)
     QGroupBox *rightBox =
         new QGroupBox("Bản mã");
 
+    QGroupBox *base64Box =
+        new QGroupBox("Bản mã Base64");
+
+    QVBoxLayout *base64Layout =
+        new QVBoxLayout;
+
+    base64Layout->addWidget(base64Text);
+    base64Box->setLayout(base64Layout);
+
     QVBoxLayout *rightLayout =
         new QVBoxLayout;
 
@@ -65,6 +78,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     textLayout->addWidget(leftBox);
     textLayout->addWidget(rightBox);
+    textLayout->addWidget(base64Box);
 
     //---------------- BUTTONS ----------------
 
@@ -150,86 +164,107 @@ void MainWindow::encryptText()
 {
     QString key = keyEdit->text();
 
-    if(key.length()!=16)
+    if(key.length() != 16)
     {
         QMessageBox::warning(
             this,
             "Lỗi",
-            "Khóa AES phải có 16 ký tự");
+            "Khóa AES-128 phải có đúng 16 ký tự");
         return;
     }
 
-    QString plain =
-        plainText->toPlainText();
+    QString plain = plainText->toPlainText();
 
-    // Demo Base64
-    QString cipher =
-        plain.toUtf8().toBase64();
+    if(plain.isEmpty())
+    {
+        QMessageBox::warning(
+            this,
+            "Lỗi",
+            "Vui lòng nhập bản rõ");
+        return;
+    }
 
-    cipherText->setText(cipher);
+    bool ok;
 
-    originalKey = key;
-    originalCipher = cipher;
+    QByteArray cipherData =
+        QAESEncryption::Crypt(
+            QAESEncryption::AES_128,
+            QAESEncryption::ECB,
+            plain.toUtf8(),
+            key.toUtf8(),
+            QByteArray(),
+            QAESEncryption::PKCS7,
+            &ok);
+
+    if(!ok)
+    {
+        QMessageBox::critical(
+            this,
+            "Lỗi",
+            "Mã hóa thất bại");
+        return;
+    }
+
+    QString cipherHex =
+        cipherData.toHex();
+
+    QString cipherBase64 =
+        cipherData.toBase64();
+
+    cipherText->setText(cipherHex);
+
+    base64Text->setText(cipherBase64);
 
     QMessageBox::information(
         this,
         "Thành công",
-        "Mã hóa thành công");
+        "Mã hóa AES thành công");
 }
 
 void MainWindow::decryptText()
 {
-    QString key =
-        keyEdit->text();
+    QString key = keyEdit->text();
+    QString cipher = cipherText->toPlainText();
 
-    QString cipher =
-        cipherText->toPlainText();
-
-    bool keyChanged =
-        (key != originalKey);
-
-    bool cipherChanged =
-        (cipher != originalCipher);
-
-    if(keyChanged && !cipherChanged)
+    if(key.length() != 16)
     {
-        QMessageBox::critical(
+        QMessageBox::warning(
             this,
-            "Lỗi toàn vẹn",
-            "KHÓA đã bị thay đổi!");
+            "Lỗi",
+            "Khóa AES-128 phải có đúng 16 ký tự");
         return;
     }
 
-    if(!keyChanged && cipherChanged)
+    bool ok;
+
+    QByteArray decrypted =
+        QAESEncryption::Decrypt(
+            QAESEncryption::AES_128,
+            QAESEncryption::ECB,
+            QByteArray::fromHex(cipher.toUtf8()),
+            key.toUtf8(),
+            QByteArray(),
+            QAESEncryption::PKCS7,
+            &ok);
+
+    if(!ok)
     {
         QMessageBox::critical(
             this,
-            "Lỗi toàn vẹn",
-            "BẢN MÃ đã bị chỉnh sửa!");
+            "Lỗi",
+            "Giải mã thất bại");
         return;
     }
 
-    if(keyChanged && cipherChanged)
-    {
-        QMessageBox::critical(
-            this,
-            "Cảnh báo",
-            "KHÓA và BẢN MÃ đều bị thay đổi!");
-        return;
-    }
-
-    QByteArray decoded =
-        QByteArray::fromBase64(
-            cipher.toUtf8());
-
-    plainText->setText(decoded);
+    plainText->setText(
+        QString::fromUtf8(decrypted));
 
     QMessageBox::information(
         this,
         "Thành công",
-        "Giải mã thành công");
-}
+        "Giải mã AES thành công");
 
+}
 void MainWindow::openFile()
 {
     QString fileName =

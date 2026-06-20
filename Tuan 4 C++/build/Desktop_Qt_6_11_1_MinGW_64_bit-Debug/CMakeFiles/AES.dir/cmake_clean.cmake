@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AES.dir/main.cpp.obj.d"
   "CMakeFiles/AES.dir/mainwindow.cpp.obj"
   "CMakeFiles/AES.dir/mainwindow.cpp.obj.d"
+  "CMakeFiles/AES.dir/qaesencryption.cpp.obj"
+  "CMakeFiles/AES.dir/qaesencryption.cpp.obj.d"
   "libAES.dll.a"
 )
 

@@ -25,9 +25,8 @@ private:
     QTextEdit *plainText;
     QTextEdit *cipherText;
     QLineEdit *keyEdit;
+    QTextEdit *base64Text;
 
-    QString originalKey;
-    QString originalCipher;
 };
 
 #endif

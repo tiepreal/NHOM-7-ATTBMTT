@@ -34,23 +34,23 @@
 		],
 		"files" : 
 		[
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
 			"CMakeLists.txt",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
 			"build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
-			"C:/c++/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
 			"build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/.qtcreator/cmake-helper/qtcreator-project.cmake",
-			"C:/c++/qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake"
+			"C:/Qt/6.11.1/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake"
 		],
 		"nodes" : 
 		[
@@ -84,13 +84,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 62,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 45,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -102,7 +102,7 @@
 			{
 				"command" : 8,
 				"file" : 4,
-				"line" : 234,
+				"line" : 235,
 				"parent" : 7
 			},
 			{
@@ -162,7 +162,7 @@
 			{
 				"command" : 8,
 				"file" : 4,
-				"line" : 252,
+				"line" : 254,
 				"parent" : 18
 			},
 			{
@@ -216,7 +216,7 @@
 			{
 				"command" : 8,
 				"file" : 4,
-				"line" : 252,
+				"line" : 254,
 				"parent" : 28
 			},
 			{
@@ -260,7 +260,7 @@
 			{
 				"command" : 8,
 				"file" : 4,
-				"line" : 252,
+				"line" : 254,
 				"parent" : 36
 			},
 			{
@@ -296,13 +296,13 @@
 			{
 				"command" : 11,
 				"file" : 15,
-				"line" : 81,
+				"line" : 82,
 				"parent" : 43
 			},
 			{
 				"command" : 17,
 				"file" : 1,
-				"line" : 69,
+				"line" : 71,
 				"parent" : 0
 			},
 			{
@@ -395,32 +395,32 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/c++/GD/AES/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/AES_autogen/include"
+					"path" : "C:/c++/GD/Tuan 4 C++/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/AES_autogen/include"
 				},
 				{
 					"backtrace" : 13,
 					"isSystem" : true,
-					"path" : "C:/c++/qt/6.11.1/mingw_64/include/QtCore"
+					"path" : "C:/Qt/6.11.1/mingw_64/include/QtCore"
 				},
 				{
 					"backtrace" : 13,
 					"isSystem" : true,
-					"path" : "C:/c++/qt/6.11.1/mingw_64/include"
+					"path" : "C:/Qt/6.11.1/mingw_64/include"
 				},
 				{
 					"backtrace" : 13,
 					"isSystem" : true,
-					"path" : "C:/c++/qt/6.11.1/mingw_64/mkspecs/win32-g++"
+					"path" : "C:/Qt/6.11.1/mingw_64/mkspecs/win32-g++"
 				},
 				{
 					"backtrace" : 6,
 					"isSystem" : true,
-					"path" : "C:/c++/qt/6.11.1/mingw_64/include/QtWidgets"
+					"path" : "C:/Qt/6.11.1/mingw_64/include/QtWidgets"
 				},
 				{
 					"backtrace" : 6,
 					"isSystem" : true,
-					"path" : "C:/c++/qt/6.11.1/mingw_64/include/QtGui"
+					"path" : "C:/Qt/6.11.1/mingw_64/include/QtGui"
 				}
 			],
 			"language" : "CXX",
@@ -437,7 +437,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				6
 			]
 		}
 	],
@@ -480,17 +481,17 @@
 			},
 			{
 				"backtrace" : 6,
-				"fragment" : "C:\\c++\\qt\\6.11.1\\mingw_64\\lib\\libQt6Widgets.a",
+				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6Widgets.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 12,
-				"fragment" : "C:\\c++\\qt\\6.11.1\\mingw_64\\lib\\libQt6Gui.a",
+				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6Gui.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 13,
-				"fragment" : "C:\\c++\\qt\\6.11.1\\mingw_64\\lib\\libQt6Core.a",
+				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6Core.a",
 				"role" : "libraries"
 			},
 			{
@@ -510,7 +511,7 @@
 			},
 			{
 				"backtrace" : 33,
-				"fragment" : "C:\\c++\\qt\\6.11.1\\mingw_64\\lib\\libQt6EntryPoint.a",
+				"fragment" : "C:\\Qt\\6.11.1\\mingw_64\\lib\\libQt6EntryPoint.a",
 				"role" : "libraries"
 			},
 			{
@@ -560,7 +561,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				6
 			]
 		},
 		{
@@ -568,7 +570,8 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
+				5,
+				8
 			]
 		},
 		{
@@ -582,15 +585,15 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				5,
-				7
+				7,
+				9
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8
+				10
 			]
 		}
 	],
@@ -624,6 +627,17 @@
 			"backtrace" : 4,
 			"path" : "mainwindow.ui",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "qaesencryption.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "qaesencryption.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 49,

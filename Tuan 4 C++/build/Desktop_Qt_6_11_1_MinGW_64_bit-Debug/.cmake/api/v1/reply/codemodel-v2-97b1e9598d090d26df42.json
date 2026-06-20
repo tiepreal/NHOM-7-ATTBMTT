@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-a5e13b199687314cc751.json",
+					"jsonFile" : "directory-.-Debug-b28be48261cec2856e33.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "AES::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AES-Debug-1922b4b8e2dfb2a1bf0b.json",
+					"jsonFile" : "target-AES-Debug-91da1266e48541cdb47c.json",
 					"name" : "AES",
 					"projectIndex" : 0
 				},
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/c++/GD/AES/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug",
-		"source" : "C:/c++/GD/AES"
+		"build" : "C:/c++/GD/Tuan 4 C++/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug",
+		"source" : "C:/c++/GD/Tuan 4 C++"
 	},
 	"version" : 
 	{
