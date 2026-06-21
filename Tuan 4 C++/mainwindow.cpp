@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "qaesencryption.h"
+#include <QSignalBlocker>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,9 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     plainText = new QTextEdit;
     cipherText = new QTextEdit;
 
-    base64Text = new QTextEdit;
-    base64Text->setReadOnly(true);
-
     QGroupBox *leftBox =
         new QGroupBox("Bản rõ");
 
@@ -58,15 +56,6 @@ MainWindow::MainWindow(QWidget *parent)
     QGroupBox *rightBox =
         new QGroupBox("Bản mã");
 
-    QGroupBox *base64Box =
-        new QGroupBox("Bản mã Base64");
-
-    QVBoxLayout *base64Layout =
-        new QVBoxLayout;
-
-    base64Layout->addWidget(base64Text);
-    base64Box->setLayout(base64Layout);
-
     QVBoxLayout *rightLayout =
         new QVBoxLayout;
 
@@ -78,7 +67,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     textLayout->addWidget(leftBox);
     textLayout->addWidget(rightBox);
-    textLayout->addWidget(base64Box);
 
     //---------------- BUTTONS ----------------
 
@@ -91,8 +79,12 @@ MainWindow::MainWindow(QWidget *parent)
     QPushButton *btnDecrypt =
         new QPushButton("Giải mã");
 
-    QPushButton *btnSave =
-        new QPushButton("Lưu");
+    QPushButton *btnSaveKey =
+        new QPushButton("Lưu khóa");
+    QPushButton *btnSavePlain =
+        new QPushButton("Lưu bản rõ");
+    QPushButton *btnSaveCipher =
+        new QPushButton("Lưu bản mã");
 
     QPushButton *btnClear =
         new QPushButton("Làm mới");
@@ -100,17 +92,22 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *buttonLayout =
         new QHBoxLayout;
 
+
     buttonLayout->addWidget(btnOpen);
     buttonLayout->addWidget(btnEncrypt);
     buttonLayout->addWidget(btnDecrypt);
-    buttonLayout->addWidget(btnSave);
+    buttonLayout->addWidget(btnSaveKey);
+    buttonLayout->addWidget(btnSavePlain);
+    buttonLayout->addWidget(btnSaveCipher);
     buttonLayout->addWidget(btnClear);
 
     btnOpen->setStyleSheet("background:#34495e;color:white;");
     btnEncrypt->setStyleSheet("background:#2ecc71;color:white;");
     btnDecrypt->setStyleSheet("background:#e67e22;color:white;");
-    btnSave->setStyleSheet("background:#9b59b6;color:white;");
     btnClear->setStyleSheet("background:#e74c3c;color:white;");
+    btnSavePlain->setStyleSheet("background:#1abc9c;color:white;");
+    btnSaveCipher->setStyleSheet("background:#8e44ad;color:white;");
+    btnSaveKey->setStyleSheet("background:#f39c12;color:white;");
 
     //---------------- MAIN ----------------
 
@@ -132,11 +129,22 @@ MainWindow::MainWindow(QWidget *parent)
     connect(btnOpen,&QPushButton::clicked,
             this,&MainWindow::openFile);
 
-    connect(btnSave,&QPushButton::clicked,
-            this,&MainWindow::saveFile);
+    connect(btnSaveKey, &QPushButton::clicked,
+            this, &MainWindow::saveKey);
+
+    connect(btnSavePlain, &QPushButton::clicked,
+            this, &MainWindow::savePlain);
+
+    connect(btnSaveCipher, &QPushButton::clicked,
+            this, &MainWindow::saveCipher);
 
     connect(btnClear,&QPushButton::clicked,
             this,&MainWindow::clearAll);
+    connect(keyEdit, &QLineEdit::textChanged,
+            this, &MainWindow::onKeyEdited);
+
+    connect(cipherText, &QTextEdit::textChanged,
+            this, &MainWindow::onCipherEdited);
 }
 
 void MainWindow::generateKey()
@@ -174,6 +182,7 @@ void MainWindow::encryptText()
     }
 
     QString plain = plainText->toPlainText();
+    QByteArray plainData = plain.toUtf8();
 
     if(plain.isEmpty())
     {
@@ -207,22 +216,36 @@ void MainWindow::encryptText()
 
     QString cipherHex =
         cipherData.toHex();
-
-    QString cipherBase64 =
-        cipherData.toBase64();
-
     cipherText->setText(cipherHex);
-
-    base64Text->setText(cipherBase64);
 
     QMessageBox::information(
         this,
         "Thành công",
         "Mã hóa AES thành công");
+
+    keyChanged = false;
+    cipherChanged = false;
+
 }
 
 void MainWindow::decryptText()
 {
+    QString errorMsg;
+
+    if(keyChanged)
+        errorMsg += "Khóa đã bị chỉnh sửa!\n";
+
+    if(cipherChanged)
+        errorMsg += "Bản mã đã bị chỉnh sửa!\n";
+
+    if(!errorMsg.isEmpty())
+    {
+        QMessageBox::critical(this,
+                              "Cảnh báo",
+                              errorMsg);
+        return;
+    }
+
     QString key = keyEdit->text();
     QString cipher = cipherText->toPlainText();
 
@@ -267,51 +290,100 @@ void MainWindow::decryptText()
 }
 void MainWindow::openFile()
 {
-    QString fileName =
-        QFileDialog::getOpenFileName(
-            this,
-            "Mở File");
-
-    if(fileName.isEmpty())
-        return;
+    QString fileName = QFileDialog::getOpenFileName(this, "Mở File");
+    if(fileName.isEmpty()) return;
 
     QFile file(fileName);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
 
-    if(file.open(QIODevice::ReadOnly))
+    QString content = file.readAll();
+    file.close();
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Chọn loại dữ liệu");
+    msgBox.setText("Bạn muốn đưa dữ liệu vào đâu?");
+
+    QPushButton *yesBtn = msgBox.addButton("Bản rõ", QMessageBox::YesRole);
+    QPushButton *noBtn  = msgBox.addButton("Bản mã", QMessageBox::NoRole);
+    QPushButton *cancelBtn = msgBox.addButton("Khóa", QMessageBox::RejectRole);
+
+    msgBox.exec();
+
+    QAbstractButton *clicked = msgBox.clickedButton();
+
+    if(clicked == yesBtn)
     {
-        QTextStream in(&file);
+        plainText->setText(content);
+    }
+    else if(clicked == noBtn)
+    {
+        QSignalBlocker blocker(cipherText);
+        cipherText->setText(content);
+        cipherChanged = false;
+    }
+    else if(clicked == cancelBtn)
+    {
+        QSignalBlocker blocker(keyEdit);
+        keyEdit->setText(content);
+        keyChanged = false;
+    }
+}
 
-        plainText->setText(
-            in.readAll());
+void MainWindow::saveKey()
+{
+    if(keyEdit->text().isEmpty())
+    {
+        QMessageBox::warning(this, "Lỗi", "Chưa có khóa");
+        return;
+    }
+    QString fileName = QFileDialog::getSaveFileName(this, "Lưu khóa");
+    if(fileName.isEmpty()) return;
 
+    QFile file(fileName);
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out << keyEdit->text();
         file.close();
     }
 }
 
-void MainWindow::saveFile()
+void MainWindow::savePlain()
 {
-    QString fileName =
-        QFileDialog::getSaveFileName(
-            this,
-            "Lưu File");
-
-    if(fileName.isEmpty())
+    if(plainText->toPlainText().isEmpty())
+    {
+        QMessageBox::warning(this, "Lỗi", "Chưa có bản rõ");
         return;
+    }
+    QString fileName = QFileDialog::getSaveFileName(this, "Lưu bản rõ");
+    if(fileName.isEmpty()) return;
 
     QFile file(fileName);
-
-    if(file.open(QIODevice::WriteOnly))
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QTextStream out(&file);
-
-        out << cipherText->toPlainText();
-
+        out << plainText->toPlainText();
         file.close();
+    }
+}
 
-        QMessageBox::information(
-            this,
-            "Lưu",
-            "Lưu file thành công");
+void MainWindow::saveCipher()
+{
+    if(cipherText->toPlainText().isEmpty())
+    {
+        QMessageBox::warning(this, "Lỗi", "Chưa có bản mã");
+        return;
+    }
+    QString fileName = QFileDialog::getSaveFileName(this, "Lưu bản mã");
+    if(fileName.isEmpty()) return;
+
+    QFile file(fileName);
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream out(&file);
+        out << cipherText->toPlainText();
+        file.close();
     }
 }
 
@@ -320,4 +392,13 @@ void MainWindow::clearAll()
     plainText->clear();
     cipherText->clear();
     keyEdit->clear();
+}
+void MainWindow::onKeyEdited()
+{
+    keyChanged = true;
+}
+
+void MainWindow::onCipherEdited()
+{
+    cipherChanged = true;
 }

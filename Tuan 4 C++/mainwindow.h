@@ -20,13 +20,19 @@ private slots:
     void openFile();
     void saveFile();
     void clearAll();
+    void onKeyEdited();
+    void onCipherEdited();
+    void savePlain();
+    void saveCipher();
+    void saveKey();
 
 private:
     QTextEdit *plainText;
     QTextEdit *cipherText;
     QLineEdit *keyEdit;
-    QTextEdit *base64Text;
 
+    bool keyChanged = false;
+    bool cipherChanged = false;
 };
 
 #endif
